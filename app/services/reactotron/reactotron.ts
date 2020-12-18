@@ -1,4 +1,4 @@
-import Tron from "reactotron-react-native"
+import Tron, { networking } from "reactotron-react-native"
 import AsyncStorage from "@react-native-community/async-storage"
 import { RootStore } from "../../models/root-store/root-store"
 import { onSnapshot } from "mobx-state-tree"
@@ -126,17 +126,7 @@ export class Reactotron {
       Tron.useReactNative({
         asyncStorage: this.config.useAsyncStorage ? undefined : false,
       })
-
-      // ignore some chatty `mobx-state-tree` actions
-      const RX = /postProcessSnapshot|@APPLY_SNAPSHOT/
-
-      // hookup mobx-state-tree middleware
-      Tron.use(
-        mst({
-          filter: (event) => RX.test(event.name) === false,
-        }),
-      )
-
+      Tron.use(networking())
       // connect to the app
       Tron.connect()
 
@@ -178,3 +168,5 @@ export class Reactotron {
     }
   }
 }
+
+export const ReactotronInstance = new Reactotron()

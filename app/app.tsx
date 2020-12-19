@@ -9,9 +9,10 @@
  * The app navigation resides in ./app/navigation, so head over there
  * if you're interested in adding screens and navigators.
  */
+import AnimatedSplash from "react-native-animated-splash-screen"
 import "./i18n"
 import "./utils/ignore-warnings"
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import { NavigationContainerRef } from "@react-navigation/native"
 import { SafeAreaProvider, initialWindowSafeAreaInsets } from "react-native-safe-area-context"
 import * as storage from "@utils/storage"
@@ -35,15 +36,20 @@ export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 /**
  * This is the root component of our app.
  */
-function App() {
+const App: React.FC<{ splashTimeOut?: number }> = ({ splashTimeOut = 2000 }) => {
   const navigationRef = useRef<NavigationContainerRef>()
-
+  const [appReady, showSplash] = useState(false)
   setRootNavigation(navigationRef)
   useBackButtonHandler(navigationRef, canExit)
   const { initialNavigationState, onNavigationStateChange } = useNavigationPersistence(
     storage,
     NAVIGATION_PERSISTENCE_KEY,
   )
+  useEffect(() => {
+    setTimeout(() => {
+      showSplash(true)
+    }, splashTimeOut)
+  }, [])
 
   // In the meantime, don't render anything. This will be the background
   // color set in native by rootView's background color. You can replace
@@ -52,13 +58,22 @@ function App() {
 
   // otherwise, we're ready to render the app
   return (
-    <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
-      <RootNavigator
-        ref={navigationRef}
-        initialState={initialNavigationState}
-        onStateChange={onNavigationStateChange}
-      />
-    </SafeAreaProvider>
+    <AnimatedSplash
+      translucent={true}
+      isLoaded={appReady}
+      logoImage={require("../assets/splash-image.png")}
+      backgroundColor={"#ffffff"}
+      logoHeight={300}
+      logoWidth={300}
+    >
+      <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
+        <RootNavigator
+          ref={navigationRef}
+          initialState={initialNavigationState}
+          onStateChange={onNavigationStateChange}
+        />
+      </SafeAreaProvider>
+    </AnimatedSplash>
   )
 }
 

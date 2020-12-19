@@ -17,7 +17,14 @@
     "baseUrl": "./app",
     "paths": {
      "@config/*":["config/*"],
-     "@components/*":["components/*"]
+     "@components/*":["components/*"],
+     "@services/*":["services/*"],
+     "@navigation/*":["navigation/*"],
+     "@navigation":["navigation"],
+     "@models/*":["models/*"],
+     "@theme/*":["theme/*"],
+     "@screens/*":["screens/*"],
+     "@utils/*":["utils/*"]
     }
   },
   "exclude": ["node_modules"],

@@ -32,10 +32,6 @@ enableScreens()
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
-if (__BUNDLE_START_TIME__) {
-  import("./services/reactotron").then(({ ReactotronInstance }) => ReactotronInstance.setup())
-}
-
 /**
  * This is the root component of our app.
  */
@@ -55,9 +51,6 @@ function App() {
   // if (!rootStore) return null
 
   // otherwise, we're ready to render the app
-  useEffect(() => {
-    console.tron.log("hello tron")
-  }, [])
   return (
     <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
       <RootNavigator

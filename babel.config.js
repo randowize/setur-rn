@@ -5,6 +5,23 @@ module.exports = {
   },
   plugins: [
     [
+      "module-resolver",
+      {
+        extensions: [".js", ".ts", ".tsx", ".ios.js", ".android.js"],
+        alias: {
+          "@components": "./app/components",
+          "@config": "./app/config",
+          "@services": "./app/services",
+          "@navigation": "./app/navigation",
+          "@models": "./app/models",
+          "@theme": "./app/theme",
+          "@screens": "./app/screens",
+          "@utils": "./app/utils",
+          "@package.json": "./package.json",
+        },
+      },
+    ],
+    [
       "@babel/plugin-proposal-decorators",
       {
         legacy: true,

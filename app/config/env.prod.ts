@@ -1,9 +1,6 @@
-export {
-  apiKey,
-  authDomain,
-  databaseURL,
-  projectId,
-  storageBucket,
-  messagingSenderId,
-  appId,
-} from "react-native-dotenv"
+export const apiKey = ""
+export const authDomain = ""
+export const projectId = ""
+export const storageBucket = ""
+export const messagingSenderId = ""
+export const appId = ""

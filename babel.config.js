@@ -18,6 +18,7 @@ module.exports = {
           "@screens": "./app/screens",
           "@utils": "./app/utils",
           "@package.json": "./package.json",
+          "@assets": "./assets",
         },
       },
     ],

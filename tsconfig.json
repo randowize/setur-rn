@@ -25,7 +25,8 @@
      "@models/*":["models/*"],
      "@theme/*":["theme/*"],
      "@screens/*":["screens/*"],
-     "@utils/*":["utils/*"]
+     "@utils/*":["utils/*"],
+     "@theme":["theme/index.ts"]
     }
   },
   "exclude": ["node_modules"],

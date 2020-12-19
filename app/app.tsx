@@ -9,6 +9,7 @@
  * The app navigation resides in ./app/navigation, so head over there
  * if you're interested in adding screens and navigators.
  */
+import "@utils/debug"
 import AnimatedSplash from "react-native-animated-splash-screen"
 import "./i18n"
 import "./utils/ignore-warnings"
@@ -28,15 +29,17 @@ import {
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
 // https://github.com/kmagiera/react-native-screens#using-native-stack-navigator
 import { enableScreens } from "react-native-screens"
+import CustomSplashScreen from "@components/splash-screen"
 
 enableScreens()
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
+console.tron.log(NAVIGATION_PERSISTENCE_KEY)
 /**
  * This is the root component of our app.
  */
-const App: React.FC<{ splashTimeOut?: number }> = ({ splashTimeOut = 2000 }) => {
+const App: React.FC<{ splashTimeOut?: number }> = ({ splashTimeOut = 100000 }) => {
   const navigationRef = useRef<NavigationContainerRef>()
   const [appReady, showSplash] = useState(false)
   setRootNavigation(navigationRef)
@@ -61,10 +64,8 @@ const App: React.FC<{ splashTimeOut?: number }> = ({ splashTimeOut = 2000 }) => 
     <AnimatedSplash
       translucent={true}
       isLoaded={appReady}
-      logoImage={require("../assets/splash-image.png")}
       backgroundColor={"#ffffff"}
-      logoHeight={300}
-      logoWidth={300}
+      customComponent={<CustomSplashScreen />}
     >
       <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
         <RootNavigator

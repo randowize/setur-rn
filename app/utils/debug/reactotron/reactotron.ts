@@ -1,7 +1,5 @@
 import Tron, { networking } from "reactotron-react-native"
 import AsyncStorage from "@react-native-community/async-storage"
-import { RootStore } from "@models/root-store/root-store"
-import { onSnapshot } from "mobx-state-tree"
 import { ReactotronConfig, DEFAULT_REACTOTRON_CONFIG } from "./reactotron-config"
 import { clear } from "@utils/storage"
 import { RootNavigation } from "@navigation"
@@ -77,35 +75,6 @@ export class Reactotron {
   }
 
   /**
-   * Hook into the root store for doing awesome state-related things.
-   *
-   * @param rootStore The root store
-   */
-  setRootStore(rootStore: any, initialData: any) {
-    if (__DEV__) {
-      rootStore = rootStore as RootStore // typescript hack
-      this.rootStore = rootStore
-
-      const { initial, snapshots } = this.config.state
-      const name = "ROOT STORE"
-
-      // logging features
-      if (initial) {
-        console.tron.display({ name, value: initialData, preview: "Initial State" })
-      }
-      // log state changes?
-      if (snapshots) {
-        onSnapshot(rootStore, (snapshot) => {
-          console.tron.display({ name, value: snapshot, preview: "New State" })
-        })
-      }
-
-      // @ts-ignore
-      console.tron.trackMstNode(rootStore)
-    }
-  }
-
-  /**
    * Configure reactotron based on the the config settings passed in, then connect if we need to.
    */
   async setup() {
@@ -125,7 +94,11 @@ export class Reactotron {
       Tron.useReactNative({
         asyncStorage: this.config.useAsyncStorage ? undefined : false,
       })
-      Tron.use(networking())
+      Tron.use(
+        networking({
+          ignoreUrls: /\/(logs|symbolicate|firebase|firestore)$/,
+        }),
+      )
       // connect to the app
       Tron.connect()
 

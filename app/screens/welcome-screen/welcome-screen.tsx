@@ -1,7 +1,6 @@
 import React from "react"
 import { View, Image, ViewStyle, TextStyle, ImageStyle, SafeAreaView } from "react-native"
 import { useNavigation } from "@react-navigation/native"
-import { observer } from "mobx-react-lite"
 import { Button, Header, Screen, Text, Wallpaper } from "../../components"
 import { color, spacing, typography } from "../../theme"
 const bowserLogo = require("./bowser.png")
@@ -75,7 +74,7 @@ const FOOTER_CONTENT: ViewStyle = {
   paddingHorizontal: spacing[4],
 }
 
-export const WelcomeScreen = observer(function WelcomeScreen() {
+export const WelcomeScreen = () => {
   const navigation = useNavigation()
   const nextScreen = () => navigation.navigate("demo")
 
@@ -113,4 +112,4 @@ export const WelcomeScreen = observer(function WelcomeScreen() {
       </SafeAreaView>
     </View>
   )
-})
+}

@@ -4,7 +4,7 @@ type User = {
   email: string
   password: string
 }
-export const save = async (user: User) => {
+export const addUser = async (user: User) => {
   const messageRef = firestore.collection("users")
   const result = await messageRef.add(user)
   return await result.get()

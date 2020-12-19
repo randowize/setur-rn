@@ -12,6 +12,7 @@
     "noUnusedLocals": true,
     "sourceMap": true,
     "target": "esnext",
+    "resolveJsonModule": true,
     "lib": ["esnext"],
     "skipLibCheck": true,
     "baseUrl": "./app",

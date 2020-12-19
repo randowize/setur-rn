@@ -1,7 +1,6 @@
 import React from "react"
 import { Image, ImageStyle, Platform, TextStyle, View, ViewStyle } from "react-native"
 import { useNavigation } from "@react-navigation/native"
-import { observer } from "mobx-react-lite"
 import { BulletItem, Button, Header, Text, Screen, Wallpaper } from "../../components"
 import { color, spacing } from "../../theme"
 import { Api } from "../../services/api"
@@ -77,7 +76,7 @@ const HINT: TextStyle = {
   marginVertical: spacing[2],
 }
 
-export const DemoScreen = observer(function DemoScreen() {
+export const DemoScreen: React.FC = () => {
   const navigation = useNavigation()
   const goBack = () => navigation.goBack()
 
@@ -154,4 +153,4 @@ export const DemoScreen = observer(function DemoScreen() {
       </Screen>
     </View>
   )
-})
+}

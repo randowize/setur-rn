@@ -14,14 +14,14 @@ import "./utils/ignore-warnings"
 import React, { useRef, useEffect } from "react"
 import { NavigationContainerRef } from "@react-navigation/native"
 import { SafeAreaProvider, initialWindowSafeAreaInsets } from "react-native-safe-area-context"
-import * as storage from "./utils/storage"
+import * as storage from "@utils/storage"
 import {
   useBackButtonHandler,
   RootNavigator,
   canExit,
   setRootNavigation,
   useNavigationPersistence,
-} from "./navigation"
+} from "@navigation"
 
 // This puts screens in a native ViewController or Activity. If you want fully native
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:

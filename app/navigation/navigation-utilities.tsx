@@ -1,13 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React, { useCallback, useState, useEffect, useRef } from "react"
 import { BackHandler } from "react-native"
 import { PartialState, NavigationState, NavigationContainerRef } from "@react-navigation/native"
 
 export const RootNavigation = {
-  navigate(name: string) {
-    name // eslint-disable-line no-unused-expressions
-  },
-  goBack() {}, // eslint-disable-line @typescript-eslint/no-empty-function
-  resetRoot(state?: PartialState<NavigationState> | NavigationState) {}, // eslint-disable-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
+  navigate(name: string) {},
+  goBack() {},
+  resetRoot(state?: PartialState<NavigationState> | NavigationState) {},
   getRootState(): NavigationState {
     return {} as any
   },
@@ -95,13 +95,7 @@ export function useNavigationPersistence(storage: any, persistenceKey: string) {
 
   const routeNameRef = useRef()
   const onNavigationStateChange = (state) => {
-    const previousRouteName = routeNameRef.current
     const currentRouteName = getActiveRouteName(state)
-
-    if (previousRouteName !== currentRouteName) {
-      // track screens.
-      __DEV__ && console.tron.log(currentRouteName)
-    }
 
     // Save the current route name for later comparision
     routeNameRef.current = currentRouteName

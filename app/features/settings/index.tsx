@@ -1,14 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react-native/no-unused-styles */
-import React, { useCallback, useMemo, useState } from "react"
-import { Alert, View, ViewStyle } from "react-native"
-import Screen from "@components/screen"
-import parse from "@modules/ui-parser"
-import Text from "@components/base/text"
-import Button from "@components/base/button"
-import { translate } from "@modules/i18n"
-import { ExtraProps, styles } from "./utils"
-import * as userService from "@services/user"
+import React, { useCallback, useMemo, useState } from 'react'
+import { Alert, View, ViewStyle } from 'react-native'
+import Screen from '@components/screen'
+import parse from '@modules/ui-parser'
+import Text from '@components/base/text'
+import Button from '@components/base/button'
+import { translate } from '@modules/i18n'
+import { ExtraProps, styles } from './utils'
+import * as userService from '@services/user'
 
 const saveState = async (state) => {
   const doc = await userService.addUser(state)
@@ -30,17 +30,17 @@ const Section: React.FC<{ title?: string; style?: ViewStyle }> = ({ title, child
 
 const computeStateKey = (label: string) => {
   switch (label.toLowerCase().trim()) {
-    case "dil":
-      return "language"
-    case "filtre":
-      return "filter"
+    case 'dil':
+      return 'language'
+    case 'filtre':
+      return 'filter'
     default:
-      return "email"
+      return 'email'
   }
 }
 
 export const SettingsScreen = () => {
-  const [state, setState] = useState({ email: "", language: [], filter: [] })
+  const [state, setState] = useState({ email: '', language: [], filter: [] })
   const [isMailValid, setMailValid] = useState(undefined)
   const options = useMemo(() => ({ input: { setMailValid, email: state.email, isMailValid } }), [
     setMailValid,
@@ -74,7 +74,7 @@ export const SettingsScreen = () => {
           onPress={async () => {
             const d = await saveState(state)
             Alert.alert(`
-            ${translate("success.sendToFirestore")}
+            ${translate('success.sendToFirestore')}
              ${JSON.stringify(d, null, 2)}
             `)
           }}

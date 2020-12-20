@@ -1,8 +1,8 @@
-import InputField from "@components/base/input-field"
-import Checkboxes from "@components/multi-checkboxes"
-import * as choice from "./choice"
-import * as input from "./input"
-import uiDescription from "./fixtures/ui.json"
+import InputField from '@components/base/input-field'
+import Checkboxes from '@components/multi-checkboxes'
+import * as choice from './choice'
+import * as input from './input'
+import uiDescription from './fixtures/ui.json'
 
 const ComponentRegistry = {
   input: InputField,

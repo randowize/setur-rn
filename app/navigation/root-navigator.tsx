@@ -5,11 +5,11 @@
  * and a "main" flow (which is contained in your PrimaryNavigator) which the user
  * will use once logged in.
  */
-import React from "react"
-import { NavigationContainer, NavigationContainerRef } from "@react-navigation/native"
-import { createNativeStackNavigator } from "react-native-screens/native-stack"
-import TabNavigator from "./tab-navigator"
-import { SafeAreaView } from "react-native"
+import React from 'react'
+import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
+import { createNativeStackNavigator } from 'react-native-screens/native-stack'
+import TabNavigator from './tab-navigator'
+import { SafeAreaView } from 'react-native'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -35,7 +35,7 @@ const RootStack = () => {
           headerShown: false,
           gestureEnabled: true,
 
-          stackPresentation: "modal",
+          stackPresentation: 'modal',
         }}
       >
         <Stack.Screen
@@ -63,4 +63,4 @@ export const RootNavigator = React.forwardRef<
   )
 })
 
-RootNavigator.displayName = "RootNavigator"
+RootNavigator.displayName = 'RootNavigator'

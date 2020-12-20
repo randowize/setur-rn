@@ -1,9 +1,9 @@
-import * as React from "react"
-import { TouchableOpacity } from "react-native"
-import { Text } from "../text/text"
-import { viewPresets, textPresets } from "./button.presets"
-import { ButtonProps } from "./button.props"
-import { mergeAll, flatten } from "ramda"
+import * as React from 'react'
+import { TouchableOpacity } from 'react-native'
+import { Text } from '../text/text'
+import { viewPresets, textPresets } from './button.presets'
+import { ButtonProps } from './button.props'
+import { mergeAll, flatten } from 'ramda'
 
 /**
  * For your text displaying needs.
@@ -13,7 +13,7 @@ import { mergeAll, flatten } from "ramda"
 export function Button(props: ButtonProps) {
   // grab the props
   const {
-    preset = "primary",
+    preset = 'primary',
     tx,
     text,
     style: styleOverride,

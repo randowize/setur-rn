@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React, { useCallback, useState, useEffect, useRef } from "react"
-import { BackHandler } from "react-native"
-import { PartialState, NavigationState, NavigationContainerRef } from "@react-navigation/native"
+import React, { useCallback, useState, useEffect, useRef } from 'react'
+import { BackHandler } from 'react-native'
+import { PartialState, NavigationState, NavigationContainerRef } from '@react-navigation/native'
 
 export const RootNavigation = {
   navigate(name: string) {},
@@ -79,10 +79,10 @@ export function useBackButtonHandler(
     }
 
     // Subscribe when we come to life
-    BackHandler.addEventListener("hardwareBackPress", onBackPress)
+    BackHandler.addEventListener('hardwareBackPress', onBackPress)
 
     // Unsubscribe when we're done
-    return () => BackHandler.removeEventListener("hardwareBackPress", onBackPress)
+    return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress)
   }, [ref])
 }
 
@@ -120,5 +120,5 @@ export function useNavigationPersistence(storage: any, persistenceKey: string) {
   return { onNavigationStateChange, restoreState, initialNavigationState }
 }
 
-const exitRoutes = ["welcome"]
+const exitRoutes = ['welcome']
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)

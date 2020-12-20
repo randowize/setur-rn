@@ -1,4 +1,4 @@
-import * as validators from "@utils/validators"
+import * as validators from '@utils/validators'
 type InputDescription = {
   caption: string
   validator?: keyof typeof validators

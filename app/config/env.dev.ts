@@ -1,6 +1,6 @@
-export const apiKey = "AIzaSyBIWc3caRFR9Lgsw_JHYDUzK4QPWB0DtUg"
-export const authDomain = "setur-1aaf1.firebaseapp.com"
-export const projectId = "setur-1aaf1"
-export const storageBucket = "setur-1aaf1.appspot.com"
-export const messagingSenderId = "81955977602"
-export const appId = "1:81955977602:web:2203c2e613d7c68275779b"
+export const apiKey = 'AIzaSyBIWc3caRFR9Lgsw_JHYDUzK4QPWB0DtUg'
+export const authDomain = 'setur-1aaf1.firebaseapp.com'
+export const projectId = 'setur-1aaf1'
+export const storageBucket = 'setur-1aaf1.appspot.com'
+export const messagingSenderId = '81955977602'
+export const appId = '1:81955977602:web:2203c2e613d7c68275779b'

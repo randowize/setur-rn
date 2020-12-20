@@ -1,6 +1,6 @@
-jest.mock("react-native-localize", () => {
+jest.mock('react-native-localize', () => {
   return {
-    findBestAvailableLanguage: ([language = "en"]) => ({
+    findBestAvailableLanguage: ([language = 'en']) => ({
       languageTag: language,
       isRTL: false,
     }),

@@ -1,6 +1,6 @@
-import { StyleSheet, ViewStyle } from "react-native"
-import { color } from "@theme"
-import * as validators from "@utils/validators"
+import { StyleSheet, ViewStyle } from 'react-native'
+import { color } from '@theme'
+import * as validators from '@utils/validators'
 
 export const styles = StyleSheet.create({
   button: {
@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
     paddingBottom: 10,
   },
   container: {
@@ -17,14 +17,14 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     paddingTop: 0,
-    position: "relative",
+    position: 'relative',
   },
   input: {
     borderColor: color.line,
     borderRadius: 5,
     borderWidth: 1,
     marginTop: 5,
-    overflow: "hidden",
+    overflow: 'hidden',
     paddingHorizontal: 10,
   },
   labelStyle: {
@@ -32,13 +32,13 @@ export const styles = StyleSheet.create({
   },
   section: {
     marginVertical: 20,
-    position: "relative",
+    position: 'relative',
   },
   sectionContent: {},
   sectionTitle: {
     color: color.palette.black,
     marginBottom: 10,
-    position: "relative",
+    position: 'relative',
   },
 })
 
@@ -47,11 +47,11 @@ export const ExtraProps = {
     label: string,
     onChangeText: (v: string) => void,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    { email = "", setMailValid = (b: boolean) => null, isMailValid = undefined } = {},
+    { email = '', setMailValid = (b: boolean) => null, isMailValid = undefined } = {},
   ) => ({
     inputWrapperStyle: styles.input,
     labelStyle: styles.labelStyle,
-    placeholderTx: "placeholder.email",
+    placeholderTx: 'placeholder.email',
     onChangeText,
     onBlur: () => setMailValid?.(validators.email(email.trim())),
   }),
@@ -73,9 +73,9 @@ export const ExtraProps = {
   sectionContent: (label: string, type: string) => {
     return {
       style: {
-        flexDirection: /dil/i.test(label) ? "row" : "column",
+        flexDirection: /dil/i.test(label) ? 'row' : 'column',
       } as ViewStyle,
-      title: type !== "input" ? (/dil/i.test(label) ? "label.language" : "label.filter") : null,
+      title: type !== 'input' ? (/dil/i.test(label) ? 'label.language' : 'label.filter') : null,
     }
   },
 }

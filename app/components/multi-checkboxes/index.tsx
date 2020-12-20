@@ -1,8 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from "react"
-import Checkbox from "@components/base/checkbox"
-import { useMultiple } from "./hooks"
-import { ViewStyle } from "react-native"
+import React from 'react'
+import Checkbox from '@components/base/checkbox'
+import { useMultiple } from './hooks'
+import { ViewStyle } from 'react-native'
 
 type Props = {
   items?: any[]

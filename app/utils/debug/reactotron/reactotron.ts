@@ -1,8 +1,8 @@
-import Tron, { networking } from "reactotron-react-native"
-import AsyncStorage from "@react-native-community/async-storage"
-import { ReactotronConfig, DEFAULT_REACTOTRON_CONFIG } from "./reactotron-config"
-import { clear } from "@utils/storage"
-import { RootNavigation } from "@navigation"
+import Tron, { networking } from 'reactotron-react-native'
+import AsyncStorage from '@react-native-community/async-storage'
+import { ReactotronConfig, DEFAULT_REACTOTRON_CONFIG } from './reactotron-config'
+import { clear } from '@utils/storage'
+import { RootNavigation } from '@navigation'
 
 // Teach TypeScript about the bad things we want to do.
 declare global {
@@ -63,7 +63,7 @@ export class Reactotron {
   constructor(config: ReactotronConfig = DEFAULT_REACTOTRON_CONFIG) {
     // merge the passed in config with some defaults
     this.config = {
-      host: "localhost",
+      host: 'localhost',
       useAsyncStorage: true,
       ...config,
       state: {
@@ -82,7 +82,7 @@ export class Reactotron {
     if (__DEV__) {
       // configure reactotron
       Tron.configure({
-        name: this.config.name || require("@package.json").name,
+        name: this.config.name || require('@package.json').name,
         host: this.config.host,
       })
 
@@ -104,31 +104,31 @@ export class Reactotron {
 
       // Register Custom Commands
       Tron.onCustomCommand({
-        title: "Reset Root Store",
-        description: "Resets the MST store",
-        command: "resetStore",
+        title: 'Reset Root Store',
+        description: 'Resets the MST store',
+        command: 'resetStore',
         handler: () => {
-          console.tron.log("resetting store")
+          console.tron.log('resetting store')
           clear()
         },
       })
 
       Tron.onCustomCommand({
-        title: "Reset Navigation State",
-        description: "Resets the navigation state",
-        command: "resetNavigation",
+        title: 'Reset Navigation State',
+        description: 'Resets the navigation state',
+        command: 'resetNavigation',
         handler: () => {
-          console.tron.log("resetting navigation state")
+          console.tron.log('resetting navigation state')
           RootNavigation.resetRoot({ routes: [] })
         },
       })
 
       Tron.onCustomCommand({
-        title: "Go Back",
-        description: "Goes back",
-        command: "goBack",
+        title: 'Go Back',
+        description: 'Goes back',
+        command: 'goBack',
         handler: () => {
-          console.tron.log("Going back")
+          console.tron.log('Going back')
           RootNavigation.goBack()
         },
       })

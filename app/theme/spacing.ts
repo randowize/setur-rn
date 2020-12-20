@@ -18,28 +18,28 @@
 export const spacing = [0, 4, 8, 12, 16, 24, 32, 48, 64]
 
 type SpacingScale =
-  | "none"
-  | "tiny"
-  | "smaller"
-  | "small"
-  | "medium"
-  | "medium+"
-  | "large"
-  | "huge"
-  | "massive"
+  | 'none'
+  | 'tiny'
+  | 'smaller'
+  | 'small'
+  | 'medium'
+  | 'medium+'
+  | 'large'
+  | 'huge'
+  | 'massive'
 
 type Spacing = { [K in SpacingScale]: number }
 
 export const NamedSpacing: Spacing = [
-  "none",
-  "tiny",
-  "smaller",
-  "small",
-  "medium+",
-  "medium",
-  "large",
-  "huge",
-  "massive",
+  'none',
+  'tiny',
+  'smaller',
+  'small',
+  'medium+',
+  'medium',
+  'large',
+  'huge',
+  'massive',
 ].reduce((acc, key: SpacingScale, index) => {
   acc[key] = spacing[index]
   return acc

@@ -1,10 +1,10 @@
-import React from "react"
-import { View, TextInput, TextStyle, ViewStyle } from "react-native"
-import { color, spacing, typography } from "../../../theme"
-import { translate } from "../../../modules/i18n"
-import { Text } from "../text/text"
-import { InputFieldProps } from "./input-field.props"
-import { mergeAll, flatten } from "ramda"
+import React from 'react'
+import { View, TextInput, TextStyle, ViewStyle } from 'react-native'
+import { color, spacing, typography } from '../../../theme'
+import { translate } from '../../../modules/i18n'
+import { Text } from '../text/text'
+import { InputFieldProps } from './input-field.props'
+import { mergeAll, flatten } from 'ramda'
 
 // the base styling for the container
 const CONTAINER: ViewStyle = {
@@ -38,7 +38,7 @@ export function InputField(props: InputFieldProps) {
     placeholder,
     labelTx,
     label,
-    preset = "default",
+    preset = 'default',
     style: styleOverride,
     inputStyle: inputStyleOverride,
     forwardedRef,

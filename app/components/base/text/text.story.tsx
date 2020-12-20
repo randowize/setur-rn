@@ -1,12 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react-native/no-color-literals */
 
-import * as React from "react"
-import { View, ViewStyle } from "react-native"
-import { storiesOf } from "@storybook/react-native"
-import { StoryScreen, Story, UseCase } from "../../../../storybook/views"
-import { color } from "../../../theme"
-import { Text } from "./text"
+import * as React from 'react'
+import { View, ViewStyle } from 'react-native'
+import { storiesOf } from '@storybook/react-native'
+import { StoryScreen, Story, UseCase } from '../../../../storybook/views'
+import { color } from '../../../theme'
+import { Text } from './text'
 
 declare let module
 
@@ -14,18 +14,18 @@ const VIEWSTYLE = {
   flex: 1,
   backgroundColor: color.storybookDarkBg,
 }
-const viewStyleArray: ViewStyle[] = [VIEWSTYLE, { backgroundColor: "#7fff00" }]
+const viewStyleArray: ViewStyle[] = [VIEWSTYLE, { backgroundColor: '#7fff00' }]
 
-storiesOf("Text", module)
+storiesOf('Text', module)
   .addDecorator((fn) => <StoryScreen>{fn()}</StoryScreen>)
-  .add("Style Presets", () => (
+  .add('Style Presets', () => (
     <Story>
       <UseCase text="default" usage="Used for normal body text.">
         <View style={VIEWSTYLE}>
           <Text>Hello!</Text>
           <Text style={{ paddingTop: 10 }}>
-            Check out{"\n"}
-            my{"\n"}
+            Check out{'\n'}
+            my{'\n'}
             line height
           </Text>
           <Text style={{ paddingTop: 10 }}>The quick brown fox jumped over the slow lazy dog.</Text>
@@ -44,7 +44,7 @@ storiesOf("Text", module)
       </UseCase>
     </Story>
   ))
-  .add("Passing Content", () => (
+  .add('Passing Content', () => (
     <Story>
       <UseCase
         text="text"
@@ -71,19 +71,19 @@ storiesOf("Text", module)
       <UseCase text="nested children" usage="You can embed them and change styles too.">
         <View style={VIEWSTYLE}>
           <Text>
-            {" "}
+            {' '}
             Hello <Text preset="bold">bolded</Text> World.
           </Text>
         </View>
       </UseCase>
     </Story>
   ))
-  .add("Styling", () => (
+  .add('Styling', () => (
     <Story>
       <UseCase text="Style array" usage="Text with style array">
         <View style={viewStyleArray}>
           <Text>
-            {" "}
+            {' '}
             Hello <Text preset="bold">bolded</Text> World.
           </Text>
         </View>

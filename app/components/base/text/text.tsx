@@ -1,9 +1,9 @@
-import * as React from "react"
-import { Text as ReactNativeText } from "react-native"
-import { translate } from "@modules/i18n"
-import { mergeAll, flatten } from "ramda"
-import { presets } from "./text.presets"
-import { TextProps } from "./text.props"
+import * as React from 'react'
+import { Text as ReactNativeText } from 'react-native'
+import { translate } from '@modules/i18n'
+import { mergeAll, flatten } from 'ramda'
+import { presets } from './text.presets'
+import { TextProps } from './text.props'
 
 /**
  * For your text displaying needs.
@@ -12,7 +12,7 @@ import { TextProps } from "./text.props"
  */
 export function Text(props: TextProps) {
   // grab the props
-  const { preset = "default", tx, txOptions, text, children, style: styleOverride, ...rest } = props
+  const { preset = 'default', tx, txOptions, text, children, style: styleOverride, ...rest } = props
 
   // figure out which content to use
   const i18nText = tx && translate(tx, txOptions)

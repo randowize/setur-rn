@@ -1,4 +1,4 @@
-import { TextInputProps, TextStyle, ViewStyle } from "react-native"
+import { TextInputProps, TextStyle, ViewStyle } from 'react-native'
 
 export interface InputFieldProps extends TextInputProps {
   /**
@@ -34,7 +34,7 @@ export interface InputFieldProps extends TextInputProps {
   /**
    * Various look & feels.
    */
-  preset?: "default"
+  preset?: 'default'
 
   forwardedRef?: any
 

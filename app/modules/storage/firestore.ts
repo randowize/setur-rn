@@ -1,8 +1,8 @@
-import { LogBox } from "react-native"
-import firebase from "firebase/app"
-import "firebase/auth"
-import "firebase/firestore"
-import ENV from "@config/env"
+import { LogBox } from 'react-native'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
+import ENV from '@config/env'
 // Your web app's Firebase configuration
 const { apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId } = ENV
 

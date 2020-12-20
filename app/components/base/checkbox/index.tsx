@@ -1,14 +1,14 @@
-import * as React from "react"
-import { TouchableOpacity, TextStyle, ViewStyle, View } from "react-native"
-import { Text } from "../text/text"
-import { color, spacing } from "@theme"
-import { CheckboxProps } from "./checkbox.props"
-import { mergeAll, flatten } from "ramda"
+import * as React from 'react'
+import { TouchableOpacity, TextStyle, ViewStyle, View } from 'react-native'
+import { Text } from '../text/text'
+import { color, spacing } from '@theme'
+import { CheckboxProps } from './checkbox.props'
+import { mergeAll, flatten } from 'ramda'
 
 const ROOT: ViewStyle = {
-  flexDirection: "row",
+  flexDirection: 'row',
   paddingVertical: spacing[1],
-  alignSelf: "flex-start",
+  alignSelf: 'flex-start',
 }
 
 const DIMENSIONS = { width: 16, height: 16 }
@@ -16,8 +16,8 @@ const DIMENSIONS = { width: 16, height: 16 }
 const OUTLINE: ViewStyle = {
   ...DIMENSIONS,
   marginTop: 2, // finicky and will depend on font/line-height/baseline/weather
-  justifyContent: "center",
-  alignItems: "center",
+  justifyContent: 'center',
+  alignItems: 'center',
   borderWidth: 1,
   borderColor: color.primaryDarker,
   borderRadius: 8,

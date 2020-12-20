@@ -7,10 +7,9 @@
  */
 import React from "react"
 import { NavigationContainer, NavigationContainerRef } from "@react-navigation/native"
-
-import { SafeAreaView } from "react-native"
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
 import TabNavigator from "./tab-navigator"
+import { SafeAreaView } from "react-native"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -56,9 +55,11 @@ export const RootNavigator = React.forwardRef<
   Partial<React.ComponentProps<typeof NavigationContainer>>
 >((props, ref) => {
   return (
-    <NavigationContainer {...props} ref={ref}>
-      <RootStack />
-    </NavigationContainer>
+    <SafeAreaView style={{ flex: 1 }}>
+      <NavigationContainer {...props} ref={ref}>
+        <TabNavigator />
+      </NavigationContainer>
+    </SafeAreaView>
   )
 })
 

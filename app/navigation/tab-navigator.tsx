@@ -7,7 +7,7 @@ import {
   MaterialTopTabBarProps,
 } from "@react-navigation/material-top-tabs"
 import { typography, color } from "@theme"
-import { HomeScreen, DemoScreen } from "../screens"
+import { HomeScreen, SettingsScreen } from "../features"
 
 const Tab = createMaterialTopTabNavigator()
 
@@ -99,7 +99,7 @@ export default function TabNavigator() {
   return (
     <Tab.Navigator tabBar={(props) => <CustomTabBar {...props} />}>
       <Tab.Screen name="Home" component={HomeScreen} options={{ title: "tab 1" }} />
-      <Tab.Screen name="Settings" component={DemoScreen} options={{ title: "tab 2" }} />
+      <Tab.Screen name="Settings" component={SettingsScreen} options={{ title: "tab 2" }} />
     </Tab.Navigator>
   )
 }

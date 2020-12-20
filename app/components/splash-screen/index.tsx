@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable react-native/no-color-literals */
-import Text from "@components/text"
+import Text from "@components/base/text"
 import React from "react"
 import { SafeAreaView, Dimensions, Image, View, StyleSheet } from "react-native"
 import { typography, color } from "@theme"

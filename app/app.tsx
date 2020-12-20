@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
  * Welcome to the main entry point of the app. In this file, we'll
  * be kicking off our app or storybook.
@@ -11,8 +12,8 @@
  */
 import "@utils/debug"
 import AnimatedSplash from "react-native-animated-splash-screen"
-import "./i18n"
-import "./utils/ignore-warnings"
+import "@modules/i18n"
+import "@utils/ignore-warnings"
 import React, { useRef, useEffect, useState } from "react"
 import { NavigationContainerRef } from "@react-navigation/native"
 import { SafeAreaProvider, initialWindowSafeAreaInsets } from "react-native-safe-area-context"

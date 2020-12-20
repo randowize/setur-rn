@@ -119,3 +119,6 @@ export function useNavigationPersistence(storage: any, persistenceKey: string) {
 
   return { onNavigationStateChange, restoreState, initialNavigationState }
 }
+
+const exitRoutes = ["welcome"]
+export const canExit = (routeName: string) => exitRoutes.includes(routeName)

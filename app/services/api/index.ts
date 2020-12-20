@@ -1,4 +1,4 @@
-import firestore from "@models/firestore"
+import firestore from "@modules/storage/firestore"
 
 type User = {
   email: string

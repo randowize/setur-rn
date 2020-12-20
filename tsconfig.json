@@ -23,6 +23,7 @@
      "@navigation/*":["navigation/*"],
      "@navigation":["navigation"],
      "@models/*":["models/*"],
+     "@modules/*":["modules/*"],
      "@theme/*":["theme/*"],
      "@screens/*":["screens/*"],
      "@utils/*":["utils/*"],

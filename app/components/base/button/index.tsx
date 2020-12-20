@@ -35,3 +35,5 @@ export function Button(props: ButtonProps) {
     </TouchableOpacity>
   )
 }
+
+export default Button

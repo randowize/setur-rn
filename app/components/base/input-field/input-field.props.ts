@@ -38,5 +38,6 @@ export interface InputFieldProps extends TextInputProps {
 
   forwardedRef?: any
 
-  getStyleOverride?: () => ViewStyle
+  inputWrapperStyle?: ViewStyle
+  labelStyle?: TextStyle
 }

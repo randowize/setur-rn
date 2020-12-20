@@ -42,7 +42,8 @@ export function InputField(props: InputFieldProps) {
     style: styleOverride,
     inputStyle: inputStyleOverride,
     forwardedRef,
-    getStyleOverride,
+    inputWrapperStyle,
+    labelStyle,
     ...rest
   } = props
   let containerStyle: ViewStyle = { ...CONTAINER, ...PRESETS[preset] }
@@ -54,8 +55,8 @@ export function InputField(props: InputFieldProps) {
 
   return (
     <View style={containerStyle}>
-      <Text preset="fieldLabel" tx={labelTx} text={label} />
-      <View style={getStyleOverride?.()}>
+      <Text preset="fieldLabel" tx={labelTx} text={label} style={labelStyle} />
+      <View style={inputWrapperStyle}>
         <TextInput
           placeholder={actualPlaceholder}
           placeholderTextColor={color.palette.lighterGrey}
@@ -63,6 +64,7 @@ export function InputField(props: InputFieldProps) {
           {...rest}
           style={inputStyle}
           ref={forwardedRef}
+          onChangeText={(text) => rest.onChangeText?.(text)}
         />
       </View>
     </View>

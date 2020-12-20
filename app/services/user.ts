@@ -2,7 +2,7 @@ import firestore from "@modules/storage/firestore"
 
 type User = {
   email: string
-  password: string
+  password?: string
 }
 export const addUser = async (user: User) => {
   const messageRef = firestore.collection("users")
@@ -10,5 +10,5 @@ export const addUser = async (user: User) => {
   return await result.get()
 }
 
-export * from "./api"
-export * from "./api.types"
+export * from "./api/api"
+export * from "./api/api.types"

@@ -8,6 +8,7 @@ import {
 } from "@react-navigation/material-top-tabs"
 import { typography, color } from "@theme"
 import { HomeScreen, SettingsScreen } from "../features"
+import { translate } from "@modules/i18n"
 
 const Tab = createMaterialTopTabNavigator()
 
@@ -71,9 +72,11 @@ const CustomTabBar: React.FC<MaterialTopTabBarProps> = ({
               flex: 1,
               justifyContent: "center",
               alignItems: "center",
-              borderBottomWidth: isFocused ? 5 : 0,
-              borderBottomColor: color.palette.red,
+              borderBottomWidth: isFocused ? 1 : 1,
+              borderBottomColor: color.palette.redDim,
               backgroundColor: isFocused ? color.palette.red : undefined,
+              borderTopRightRadius: index === 0 && isFocused ? 5 : 0,
+              borderTopLeftRadius: index === 1 && isFocused ? 5 : 0,
             }}
           >
             <Animated.Text
@@ -82,7 +85,7 @@ const CustomTabBar: React.FC<MaterialTopTabBarProps> = ({
                 textTransform: "uppercase",
                 fontFamily: typography.primary,
                 fontWeight: isFocused ? "bold" : "normal",
-                color: isFocused ? color.palette.white : undefined,
+                color: isFocused ? color.palette.white : color.palette.black,
                 paddingVertical: 10,
               }}
             >
@@ -98,8 +101,12 @@ const CustomTabBar: React.FC<MaterialTopTabBarProps> = ({
 export default function TabNavigator() {
   return (
     <Tab.Navigator tabBar={(props) => <CustomTabBar {...props} />}>
-      <Tab.Screen name="Home" component={HomeScreen} options={{ title: "tab 1" }} />
-      <Tab.Screen name="Settings" component={SettingsScreen} options={{ title: "tab 2" }} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ title: translate("tabs.home") }} />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{ title: translate("tabs.settings") }}
+      />
     </Tab.Navigator>
   )
 }

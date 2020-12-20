@@ -20,13 +20,15 @@ const OUTLINE: ViewStyle = {
   alignItems: "center",
   borderWidth: 1,
   borderColor: color.primaryDarker,
-  borderRadius: 1,
+  borderRadius: 8,
 }
 
+const fillSize = DIMENSIONS.width - 6
 const FILL: ViewStyle = {
-  width: DIMENSIONS.width - 4,
-  height: DIMENSIONS.height - 4,
+  width: fillSize,
+  height: fillSize,
   backgroundColor: color.primary,
+  borderRadius: fillSize / 2,
 }
 
 const LABEL: TextStyle = { paddingLeft: spacing[2] }

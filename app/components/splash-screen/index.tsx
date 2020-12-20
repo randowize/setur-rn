@@ -3,7 +3,7 @@
 import Text from "@components/text"
 import React from "react"
 import { SafeAreaView, Dimensions, Image, View, StyleSheet } from "react-native"
-import { typography } from "@theme"
+import { typography, color } from "@theme"
 
 const { width, height } = Dimensions.get("window")
 
@@ -21,7 +21,7 @@ const CustomSplashScreen: React.FC = () => (
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    backgroundColor: "#cf1717",
+    backgroundColor: color.palette.red,
     height,
     justifyContent: "center",
     width,

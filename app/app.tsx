@@ -39,7 +39,7 @@ console.tron.log(NAVIGATION_PERSISTENCE_KEY)
 /**
  * This is the root component of our app.
  */
-const App: React.FC<{ splashTimeOut?: number }> = ({ splashTimeOut = 100000 }) => {
+const App: React.FC<{ splashTimeOut?: number }> = ({ splashTimeOut = 2000 }) => {
   const navigationRef = useRef<NavigationContainerRef>()
   const [appReady, showSplash] = useState(false)
   setRootNavigation(navigationRef)

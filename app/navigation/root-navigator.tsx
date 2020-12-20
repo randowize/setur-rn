@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
  * The root navigator is used to switch between major navigation flows of your app.
  * Generally speaking, it will contain an auth flow (registration, login, forgot password)
@@ -7,8 +8,9 @@
 import React from "react"
 import { NavigationContainer, NavigationContainerRef } from "@react-navigation/native"
 
+import { SafeAreaView } from "react-native"
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
-import { PrimaryNavigator } from "./primary-navigator"
+import TabNavigator from "./tab-navigator"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -28,22 +30,24 @@ const Stack = createNativeStackNavigator<RootParamList>()
 
 const RootStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-        gestureEnabled: true,
-
-        stackPresentation: "modal",
-      }}
-    >
-      <Stack.Screen
-        name="primaryStack"
-        component={PrimaryNavigator}
-        options={{
+    <SafeAreaView style={{ flex: 1 }}>
+      <Stack.Navigator
+        screenOptions={{
           headerShown: false,
+          gestureEnabled: true,
+
+          stackPresentation: "modal",
         }}
-      />
-    </Stack.Navigator>
+      >
+        <Stack.Screen
+          name="primaryStack"
+          component={TabNavigator}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    </SafeAreaView>
   )
 }
 

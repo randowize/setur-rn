@@ -9,6 +9,3 @@ export const addUser = async (user: User) => {
   const result = await messageRef.add(user)
   return await result.get()
 }
-
-export * from "./api/api"
-export * from "./api/api.types"

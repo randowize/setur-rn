@@ -122,7 +122,8 @@ This directory will hold your Jest configs and mocks, as well as your [storyshot
 
 ## Running the Project
 
-1- Setup a Firestore project and open `app/config/end.{dev,prod}` to replace the api `credentials`. [More details for firestore project configure](https://firebase.google.com/docs/firestore/quickstart)
+1- Setup a Firestore project and open `app/config/end.{dev,prod}` to replace the firestore credentials. [More details for firestore project configure](https://firebase.google.com/docs/firestore/quickstart). You can also use the default config provided in the project
+
 
 2- Open 2 console windows
 

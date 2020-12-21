@@ -1,4 +1,5 @@
-# RNSetur
+# React Native Setur
+
 
 
 The project includes:

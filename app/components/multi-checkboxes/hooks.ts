@@ -22,6 +22,7 @@ const reduceSingle = (...[, payload]: Parameters<typeof reduceMultiple>) => {
 export const useMultiple = (multiple: boolean, onChange?: (v: unknown) => void) => {
   const [values, setValue] = useState([])
   const selectedValuesRef = useRef({})
+  const firstValueRef = useRef(values)
   const reducer = useMemo(() => (multiple ? reduceMultiple : reduceSingle), [multiple])
   const toggleCheckBox = useCallback(
     (v, payload) => {
@@ -31,7 +32,7 @@ export const useMultiple = (multiple: boolean, onChange?: (v: unknown) => void) 
   )
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
-    onChange?.(values)
+    if (firstValueRef.current !== values) onChange?.(values)
   }, [values])
   return { values, toggleCheckBox }
 }

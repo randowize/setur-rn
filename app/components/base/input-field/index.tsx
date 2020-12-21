@@ -65,6 +65,7 @@ export function InputField(props: InputFieldProps) {
           style={inputStyle}
           ref={forwardedRef}
           onChangeText={(text) => rest.onChangeText?.(text)}
+          testID="email"
         />
       </View>
     </View>

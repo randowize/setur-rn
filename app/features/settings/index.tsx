@@ -1,8 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react-native/no-unused-styles */
 import React, { useCallback, useMemo, useState } from 'react'
-import { Alert, View, ViewStyle } from 'react-native'
-import Screen from '@components/screen'
+import { Alert, View, ViewStyle, SafeAreaView } from 'react-native'
 import parse from '@modules/ui-parser'
 import Text from '@components/base/text'
 import Button from '@components/base/button'
@@ -53,9 +52,9 @@ export const SettingsScreen = () => {
     },
     [],
   )
-  console.tron.log(isMailValid)
+  console.log(state.email, state.language, isMailValid)
   return (
-    <Screen style={styles.container} unsafe>
+    <SafeAreaView style={styles.container}>
       {parsedDescription.ui.map(({ Component, props, type: componentType, label }, key) => (
         <Section key={key} {...(ExtraProps.sectionContent(label, componentType) ?? {})}>
           <Component
@@ -70,7 +69,7 @@ export const SettingsScreen = () => {
           tx="common.send"
           style={[styles.button, isMailValid ? {} : { opacity: 0.5 }]}
           textStyle={{ fontSize: 19 }}
-          disabled={!isMailValid || !state.language.length}
+          disabled={!isMailValid || state.language.length === 0}
           onPress={async () => {
             const d = await saveState(state)
             Alert.alert(`
@@ -80,7 +79,7 @@ export const SettingsScreen = () => {
           }}
         />
       </View>
-    </Screen>
+    </SafeAreaView>
   )
 }
 

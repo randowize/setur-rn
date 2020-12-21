@@ -646,6 +646,7 @@ exports[`Storyshots Checkbox Behaviour 1`] = `
                       "width": 10,
                     }
                   }
+                  testID="fill"
                 />
               </View>
               <Text
@@ -1611,6 +1612,7 @@ exports[`Storyshots InputField Labelling 1`] = `
                       "minHeight": 44,
                     }
                   }
+                  testID="email"
                   underlineColorAndroid="rgba(0, 0, 0, 0)"
                   value=""
                 />
@@ -1730,6 +1732,7 @@ exports[`Storyshots InputField Labelling 1`] = `
                       "minHeight": 44,
                     }
                   }
+                  testID="email"
                   underlineColorAndroid="rgba(0, 0, 0, 0)"
                   value=""
                 />
@@ -1872,6 +1875,7 @@ exports[`Storyshots InputField Ref Forwarding 1`] = `
                       "padding": 40,
                     }
                   }
+                  testID="email"
                   underlineColorAndroid="rgba(0, 0, 0, 0)"
                   value="fancy colour"
                 />
@@ -2033,6 +2037,7 @@ exports[`Storyshots InputField Style Overrides 1`] = `
                       "minHeight": 44,
                     }
                   }
+                  testID="email"
                   underlineColorAndroid="rgba(0, 0, 0, 0)"
                   value="Inigo"
                 />
@@ -2072,6 +2077,7 @@ exports[`Storyshots InputField Style Overrides 1`] = `
                       "minHeight": 44,
                     }
                   }
+                  testID="email"
                   underlineColorAndroid="rgba(0, 0, 0, 0)"
                   value="Montoya"
                 />
@@ -2194,6 +2200,7 @@ exports[`Storyshots InputField Style Overrides 1`] = `
                       "padding": 40,
                     }
                   }
+                  testID="email"
                   underlineColorAndroid="rgba(0, 0, 0, 0)"
                   value="fancy colour"
                 />
@@ -2329,6 +2336,7 @@ exports[`Storyshots InputField Style Overrides 1`] = `
                       "padding": 40,
                     }
                   }
+                  testID="email"
                   underlineColorAndroid="rgba(0, 0, 0, 0)"
                   value="fancy colour"
                 />

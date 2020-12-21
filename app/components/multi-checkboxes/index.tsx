@@ -15,7 +15,7 @@ type Props = {
 
 const Checkboxes = (props: Props) => {
   const { values, toggleCheckBox } = useMultiple(props.multiple, props.onChange)
-  return (props.items ?? []).map((x) => (
+  const content = (props.items ?? []).map((x) => (
     <Checkbox
       key={x.key}
       onToggle={() => toggleCheckBox(x.key, x)}
@@ -25,8 +25,10 @@ const Checkboxes = (props: Props) => {
       outlineStyle={props.outlineStyle}
       fillStyle={props.fillStyle}
       tx={props.tx}
+      testId={`checkbox-${x.key}`}
     />
   ))
+  return <>{content}</>
 }
 
 export default Checkboxes

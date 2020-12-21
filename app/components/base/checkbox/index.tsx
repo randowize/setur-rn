@@ -48,8 +48,11 @@ export function Checkbox(props: CheckboxProps) {
       disabled={!props.onToggle}
       onPress={onPress}
       style={rootStyle}
+      testID={props.testId}
     >
-      <View style={outlineStyle}>{props.value ? <View style={fillStyle} /> : null}</View>
+      <View style={outlineStyle}>
+        {props.value ? <View style={fillStyle} testID="fill" /> : null}
+      </View>
       <Text
         text={props.text}
         tx={props.tx}

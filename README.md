@@ -137,6 +137,12 @@ This directory will hold your Jest configs and mocks, as well as your [storyshot
 
 4- In the second terminal run `yarn run ios` (or `npm run ios`)
 
+## Running the Test
+
+run `yarn test`
+
+for coverage, run run `yarn test --coverage`
+
 
 ## Running Storybook
 

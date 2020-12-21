@@ -124,12 +124,17 @@ This directory will hold your Jest configs and mocks, as well as your [storyshot
 
 1- Setup a Firestore project and open `app/config/end.{dev,prod}` to replace the firestore credentials. [More details for firestore project configure](https://firebase.google.com/docs/firestore/quickstart). You can also use the default config provided in the project
 
+2- run `yarn install` or `npm install` in a terminal window
 
-2- Open 2 console windows
 
-3- In the first console run `yarn start` (or `npm run start`)
+2- Open 2 terminal windows
 
-4- In the second console run `yarn run ios` (or `npm run ios`)
+
+3- In the first terminal run `yarn start` (or `npm run start`)
+
+
+4- In the second terminal run `yarn run ios` (or `npm run ios`)
+
 
 ## Running Storybook
 

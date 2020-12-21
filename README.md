@@ -1,34 +1,33 @@
 # RNSetur
 
-[![CircleCI](https://circleci.com/gh/infinitered/ignite-bowser.svg?style=svg)](https://circleci.com/gh/infinitered/ignite-bowser)
 
-## The latest and greatest boilerplate for Infinite Red opinions
-
-This is the boilerplate that [Infinite Red](https://infinite.red) uses as a way to test bleeding-edge changes to our React Native stack.
-
-Currently includes:
+The project includes:
 
 - React Native
 - React Navigation
-- MobX State Tree
 - TypeScript
-- And more!
+- React Native Testing Library
+- Firestore
+- React Hooks
 
 ## Quick Start
 
-The Ignite Bowser boilerplate project's structure will look similar to this:
+The project's structure is like this (Modified Ignite template):
+
+
 
 ```
-ignite-project
+rn-setur-project
+
 ├── app
 │   ├── components
-│   ├── i18n
-│   ├── utils
-│   ├── models
+│   ├── config
+|   |-- features(different app screens)
+│   ├── modules
 │   ├── navigation
-│   ├── screens
 │   ├── services
 │   ├── theme
+|   |-- utils
 │   ├── app.tsx
 ├── storybook
 │   ├── views
@@ -39,7 +38,6 @@ ignite-project
 │   ├── __snapshots__
 │   ├── storyshots.test.ts.snap
 │   ├── mock-i18n.ts
-│   ├── mock-reactotron.ts
 │   ├── setup.ts
 │   ├── storyshots.test.ts
 ├── README.md
@@ -62,7 +60,7 @@ ignite-project
 │   ├── IgniteProject-tvOSTests
 │   ├── IgniteProject.xcodeproj
 │   └── IgniteProjectTests
-├── .env
+
 └── package.json
 
 ```
@@ -89,17 +87,17 @@ app
 **components**
 This is where your React components will live. Each component will have a directory containing the `.tsx` file, along with a story file, and optionally `.presets`, and `.props` files for larger components. The app will come with some commonly used components like Button.
 
-**i18n**
-This is where your translations will live if you are using `react-native-i18n`.
+**modules**
+This is where transversal functionalities such as storage, i18n, ui-parsing reside.
 
-**models**
-This is where your app's models will live. Each model has a directory which will contain the `mobx-state-tree` model file, test file, and any other supporting files like actions, types, etc.
+
 
 **navigation**
 This is where your `react-navigation` navigators will live.
 
-**screens**
-This is where your screen components will live. A screen is a React component which will take up the entire screen and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files.
+**features**
+This is where your screen components will live. A feature represent an view with which the end user will interact with your application. It's similar to a page if we were to transpose it to the atomic design methodology. It's React component which will take up the entire screen and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files.
+
 
 **services**
 Any services that interface with the outside world will live here (think REST APIs, Push Notifications, etc.).
@@ -112,9 +110,7 @@ This is a great place to put miscellaneous helpers and utilities. Things like da
 
 **app.tsx** This is the entry point to your app. This is where you will find the main App component which renders the rest of the application. This is also where you will specify whether you want to run the app in storybook mode.
 
-### ./ignite directory
 
-The `ignite` directory stores all things Ignite, including CLI and boilerplate items. Here you will find generators, plugins and examples to help you get started with React Native.
 
 ### ./storybook directory
 
@@ -124,6 +120,16 @@ This is where your stories will be registered and where the Storybook configs wi
 
 This directory will hold your Jest configs and mocks, as well as your [storyshots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) test file. This is a file that contains the snapshots of all your component storybooks.
 
+## Running the Project
+
+1- Setup a Firestore project and open `app/config/end.{dev,prod}` to replace the api `credentials`. [More details for firestore project configure](https://firebase.google.com/docs/firestore/quickstart)
+
+2- Open 2 console windows
+
+3- In the first console run `yarn start` (or `npm run start`)
+
+4- In the second console run `yarn run ios` (or `npm run ios`)
+
 ## Running Storybook
 
 From the command line in your generated app's root directory, enter `yarn run storybook`
@@ -132,11 +138,4 @@ This starts up the storybook server.
 In `index.js`, change `SHOW_STORYBOOK` to `true` and reload the app.
 For Visual Studio Code users, there is a handy extension that makes it easy to load Storybook use cases into a running emulator via tapping on items in the editor sidebar. Install the `React Native Storybook` extension by `Orta`, hit `cmd + shift + P` and select "Reconnect Storybook to VSCode". Expand the STORYBOOK section in the sidebar to see all use cases for components that have `.story.tsx` files in their directories.
 
-## Previous Boilerplates
 
-- [2017 aka Andross](https://github.com/infinitered/ignite-andross)
-- [2016 aka Ignite 1.0](https://github.com/infinitered/ignite-ir-boilerplate-2016)
-
-## Premium Support
-
-[Ignite CLI](https://infinite.red/ignite), [Ignite Andross](https://github.com/infinitered/ignite-andross), and [Ignite Bowser](https://github.com/infinitered/ignite-bowser), as open source projects, are free to use and always will be. [Infinite Red](https://infinite.red/) offers premium Ignite support and general mobile app design/development services. Email us at [hello@infinite.red](mailto:hello@infinite.red) to get in touch with us for more details.
